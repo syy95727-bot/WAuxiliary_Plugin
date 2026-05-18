@@ -1,56 +1,87 @@
 # 文转音 (Fish Audio)
 
-使用 Fish Audio 的文本转语音 API 将文字转换为高质量的语音。
+## 功能介绍
 
-## 用法
+使用 Fish Audio 高质量文本转语音 API，支持多种音色、语言和语速调节。
 
-### 1. 配置设置
+## 使用步骤
 
-- **音色**: Fish Audio 支持的语音模型，例如 `zh-male-1`、`zh-female-1` 等
-- **API密钥**: 从 [Fish Audio 官网](https://www.fish.audio/) 获取你的 API Key
-- **语速**: 语音播放速度，1.0 为正常速度（可选，默认为 1.0）
+### 1. 获取 API 密钥
 
-### 2. 命令
+1. 访问 [Fish Audio 官网](https://fish.audio/)
+2. 注册账户并登录
+3. 进入开发者中心获取 API Key
+4. 复制 API Key 备用
 
-```
-#tts 你好
-```
+### 2. 插件配置
 
-### 3. 触发
-
-在设置配置好音色和 API 密钥后，单击发送按钮即可发送文转音命令。
-
-### 4. 结果
-
-插件将自动合成语音并以 MP3 格式发送。
-
-## Fish Audio API 参数说明
+点击"设置"按钮，配置以下参数：
 
 | 参数 | 说明 | 示例 |
 |------|------|------|
-| text | 需要转换的文本 | "你好" |
-| voice | 语音模型 | "zh-male-1" |
-| speed | 语速（可选） | 1.0 |
-| audio_format | 音频格式 | "mp3" |
+| **音色** | 从下拉菜单选择预设音色 | zh-male-1 (中文男性-1) |
+| **API密钥** | Fish Audio 的 API Key | your-api-key-here |
+| **语速** | 语速调节 (0.5-2.0) | 1.0 (默认正常速度) |
+
+### 3. 使用命令
+
+在微信聊天框输入命令触发：
+
+```
+#tts 你好，欢迎使用Fish Audio
+#tts Hello, welcome to Fish Audio
+```
+
+点击发送按钮后，机器人会自动生成语音并发送。
 
 ## 支持的音色
 
-- `zh-male-1` - 中文男性声音1
-- `zh-male-2` - 中文男性声音2
-- `zh-female-1` - 中文女性声音1
-- `zh-female-2` - 中文女性声音2
-- 其他音色请查看 [Fish Audio 官方文档](https://www.fish.audio/)
+### 中文
+- **男性**: zh-male-1, zh-male-2, zh-male-3
+- **女性**: zh-female-1, zh-female-2, zh-female-3
 
-## 获取 API 密钥
+### 英文
+- **男性**: en-male-1
+- **女性**: en-female-1
 
-1. 访问 [Fish Audio 官网](https://www.fish.audio/)
-2. 注册账号或登录
-3. 进入开发者中心
-4. 创建新的 API Key
-5. 复制 API Key 到插件设置中
+### 日文
+- **男性**: ja-male-1
+- **女性**: ja-female-1
 
-## 注意事项
+> 更多音色可访问 [Fish Audio 音色库](https://fish.audio/voice-library/) 查看
 
-- 请确保 API Key 有效且在配额范围内
-- 文本长度过长时可能导致请求失败
-- 语速范围通常为 0.5 - 2.0
+## 参数说明
+
+| 参数 | 范围 | 说明 |
+|------|------|------|
+| 语速 | 0.5 - 2.0 | 0.5为最慢，2.0为最快，1.0为正常速度 |
+| 音色 | - | 系统预设音色列表 |
+
+## 常见问题
+
+### Q: 如何获得更多音色？
+A: 可以访问 [Fish Audio 官网](https://fish.audio/voice-library/) 查看完整的音色库，并在官网上的设置中添加自定义音色。
+
+### Q: 生成语音失败怎么办？
+A: 
+1. 检查 API Key 是否正确
+2. 检查网络连接
+3. 确认账户是否有足够的额度
+4. 查看错误提示信息
+
+### Q: 支持哪些语言？
+A: Fish Audio 支持多种语言，您可以输入对应语言的文本，系统会自动识别并使用相应的音色生成语音。
+
+## 更新日志
+
+- **v1.1.0** (2026-05-18)
+  - 改用 Fish Audio API
+  - 添加音色下拉菜单选择功能
+  - 支持语速调节 (0.5-2.0)
+  - 改进错误处理和提示
+
+## 相关链接
+
+- [Fish Audio 官网](https://fish.audio/)
+- [Fish Audio 文档](https://docs.fish.audio/)
+- [Fish Audio 音色库](https://fish.audio/voice-library/)
